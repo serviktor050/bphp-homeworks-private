@@ -15,13 +15,18 @@
                     <li><a href="1.1-intro-and-branching/1.1.2">Задание 1.1.2</a></li>
                 </ul>
             </li>
-            <li>Занятие 1.2. Работа с формами и строками
+            <li>Занятие 1.2. Формы и строки
                 <ul>
                     <li><a href="1.2-strings-and-forms/1.2.1-registration">Задание 1 - Регистрация</a></li>
                     <li><a href="1.2-strings-and-forms/1.2.2-name-standart">Задание 2 - Стандартизатор имени</a></li>
                     <li><a href="1.2-strings-and-forms/1.2.3-additional">Задание 3 - Дополнительные задания</a></li>
                 </ul>
-
+            </li>
+            <li>Занятие 1.3 Массивы и циклы
+                <ul>
+                    <li><a href="1.3-arrays-and-functions/1-places">Задание 1 - Посадочные места</a></li>
+                    <li><a href="1.3-arrays-and-functions/2-search">Задание 2 - Резервация мест</a></li>
+                </ul>
             </li>
         </ul>
     </li>
