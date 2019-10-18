@@ -6,21 +6,23 @@
     $schemeOfTheHall[1][1] = 'true';
     $schemeOfTheHall[1][4] = 'true';
 
-    var_dump($schemeOfTheHall);
-
-    $requiredPlaces = 3;
+    $requiredPlaces = 2;
 
     function reserve($schemeOfTheHall, $requiredPlaces){
-        $vacantPlaces = 0;
-        for ($i = 1; $i <= count($schemeOfTheHall); $i++) {            
-            for ($m = 1; $m < (count($schemeOfTheHall[$i]) - $requiredPlaces + 1); $m++) {
+        $vacantPlaces;
+        for ($i = 1; $i <= count($schemeOfTheHall); $i++) {
+            $vacantPlaces = 0;            
+            for ($m = 1; $m <= count($schemeOfTheHall[$i]); $m++) {   
+                if ($schemeOfTheHall[$i][$m] === 'true') {
+                    $vacantPlaces = 0;
+                }; 
                 if ($schemeOfTheHall[$i][$m] === 'false') {
                     $vacantPlaces++;
                     if ($vacantPlaces === $requiredPlaces) {
-                        $numberOfPlaces = $m + ($requiredPlaces - 1);
-                        echo "Ряд $i, места c $m по $numberOfPlaces.";
+                        $numberOfPlaces = $m - $requiredPlaces + 1;
+                        echo "Ряд $i, места c $numberOfPlaces по $m.";
                     };
-                };                
+                };  
             };
         }; 
     };
