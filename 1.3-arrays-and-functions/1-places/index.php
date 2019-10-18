@@ -24,9 +24,6 @@
         } else {
             return false;
         };
-        if ($requiredRow < count($map) || $requiredPlace > count($map[$requiredRow])) {
-            return false;
-        }
     };
 
     $reverve = reserve($map, $requiredRow, $requiredPlace);
