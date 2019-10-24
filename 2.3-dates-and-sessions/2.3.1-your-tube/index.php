@@ -29,10 +29,23 @@
      */
     function shouldBeIncremented(): bool
     {
-        //write your code here
+        $startViewingTime = time();
+        setcookie('time', $startViewingTime);
+
+        if ($_COOKIE['time']) {
+            if (($startViewingTime - $_COOKIE['time']) <= 300) {
+                return false;
+            } else {
+                return true;
+            };
+        } else {
+            return false;
+        };
     }
 
-    //
+    if (shouldBeIncremented() === true) {
+        incrementViews(getViews());
+    };
 ?>
 
 <!DOCTYPE html>
