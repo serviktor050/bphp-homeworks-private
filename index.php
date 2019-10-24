@@ -44,6 +44,13 @@
                     <li><a href="2.2-OOP/2.2.2">Задание 2 — Модель доступа к данным</a></li>
                 </ul>
             </li>
+            <li>Занятие 2.3 Даты. Сессии
+                <ul>
+                    <li><a href="2.3-dates-and-sessions/2.3.1-your-tube">Задание 1 — Защита от накрутки</a></li>
+                    <li><a href="2.3-dates-and-sessions/2.3.2-brute-protection">Задание 2 — Защита от перебора</a></li>
+                    <li><a href="2.3-dates-and-sessions/2.3.3-additional">Задание 3 — Дополнительные задания</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
 </ul>
