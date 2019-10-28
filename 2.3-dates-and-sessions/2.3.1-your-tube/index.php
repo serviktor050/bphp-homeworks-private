@@ -32,7 +32,7 @@
         $startViewingTime = time();
         setcookie('time', $startViewingTime);
 
-        if ($_COOKIE['time']) {
+        if (isset($_COOKIE['time'])) {
             if (($startViewingTime - $_COOKIE['time']) <= 300) {
                 return false;
             } else {
