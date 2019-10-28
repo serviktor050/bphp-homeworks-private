@@ -6,12 +6,14 @@
     ];
 
     function login($users) {
-        if ($users[$_POST['login']] === $_POST['password']) { 
-            echo 'Вход выполнен.';
-            return true;
-        } else {
-            echo 'Неверный логин/пароль.';
-            return false;
+        if (isset($_POST['login'])) {
+            if ($users[$_POST['login']] === $_POST['password']) { 
+                echo 'Вход выполнен.';
+                return true;
+            } else {
+                echo 'Неверный логин/пароль.';
+                return false;
+            };
         };
     };
 
