@@ -8,7 +8,12 @@
     include 'classes/Router.php';
     include 'classes/BadRequest.php';
     include 'classes/NotFound.php';  
-    $page = $_GET['page'];
+    
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = 0;
+    };
 
     $router = new Router($availableLinks);
     
