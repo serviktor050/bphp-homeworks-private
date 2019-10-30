@@ -4,16 +4,17 @@
 </form>
 
 <?php
-    $uploadsDir = '/uploads_images';
-    if ($_FILES['userfile']['error'] === 0) {
-        if (exif_imagetype($_FILES['userfile']['tmp_name']) != false) {
-            $file = $_FILES['userfile']['tmp_name'];
-            $fileName = $_FILES['userfile']['name'];
-            move_uploaded_file($file, __DIR__."/uploads_images/$fileName");
+    if (isset($_FILES['userfile'])) {
+        if ($_FILES['userfile']['error'] === 0) {
+            if (exif_imagetype($_FILES['userfile']['tmp_name']) != false) {
+                $file = $_FILES['userfile']['tmp_name'];
+                $fileName = $_FILES['userfile']['name'];
+                move_uploaded_file($file, "./uploads_images/$fileName");
+            };
         };
     };
     
-    $scannedDirectory = scandir(__DIR__.$uploadsDir);
+    $scannedDirectory = scandir("./uploads_images");
 
     foreach ($scannedDirectory as $image) {
       if ($image === '.' || $image === '..') {
