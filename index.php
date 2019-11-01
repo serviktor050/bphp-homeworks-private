@@ -60,6 +60,12 @@
                     <li><a href="3.1-exceptions-and-headers/3.1.1-router">Задание 1 — Роутер</a></li>
                 </ul>
             </li>
+            <li>Занятие 3.2 PHP7. PSR-*. PHPDOC
+                <ul>
+                    <li><a href="3.2-PHP7-PSR-PHPDoc/3.2.1">Задание 1 - Недочёт в старом коде</a></li>
+                    <li><a href="3.2-PHP7-PSR-PHPDoc/3.2.2">Задание 2 - Поддержка веб-приложения кафе</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
 </ul>
