@@ -21,7 +21,7 @@
         continue;
       };
       if (substr($image, -4) === '.jpg' || substr($image, -5) === '.jpeg' || substr($image, -4) === '.png' || substr($image, -4) === '.gif') {
-          echo "<img src='/uploads_images/$image' style='width: 100px'><br>";
+          echo "<img src='./uploads_images/$image' style='width: 100px'><br>";
       };
     };
 ?>
