@@ -8,36 +8,48 @@
     session_start();
 
     if (isset($_POST['login'])) {
-        setcookie('login', $_POST['login']);
-        setcookie('time', time());
-
         if ($users[$_POST['login']] === $_POST['password']) { 
             echo 'Вход выполнен.';
         } else {
-            if (count($_SESSION) === 0) {
+            if (count($_SESSION) === 0 && isset($_SESSION['time']) === false) {
                 $_SESSION['counter'] = 1;
+                $_SESSION['login'] = $_POST['login'];
+                $_SESSION['time'] = time();
+                var_dump($_SESSION['time']);
+                var_dump($_SESSION['counter']);
+                var_dump($_SESSION['login']);
+                echo 'session = 1. Вход не выполнен. Неверный логин/пароль.';
             };
-            if ($_COOKIE['login'] === $_POST['login'] && $_COOKIE['time']) {
-                if ((time() - $_COOKIE['time']) < 60) {
+            if ($_SESSION['login'] === $_POST['login'] && $_SESSION['time']) {
+                if ((time() - $_SESSION['time']) < 60) {
                     $_SESSION['counter']++;
+                    var_dump($_SESSION['time']);
+                    var_dump($_SESSION['login']);                    
+                    var_dump($_SESSION['counter']);
+                     
                     if ($_SESSION['counter'] > 3) {
                         echo 'Вход не выполнен. Неверный логин/пароль.<br>Слишком часто вводите пароль. Попробуйте еще раз через минуту.';
-                        $_SESSION = [];
-                         
+                        session_destroy(); 
                         $file = 'bruteForceFile.txt';
                         $newFile = fopen($file, 'a+');
-                        $report ="Пользователь: ".$_COOKIE['login'].' '."Дата: ".date('d.m.Y H:i:s')."\n";
+                        $report ="Пользователь: ".$_SESSION['login'].' '."Дата: ".date('d.m.Y H:i:s')."\n";
                         fwrite($newFile, $report);
                         fclose($newFile);
                     } else {
                         echo 'Вход не выполнен. Неверный логин/пароль.';
-                    };            
+                    };          
                 };            
-                if ((time() - $_COOKIE['time']) < 5) {
+                if ((time() - $_SESSION['time']) < 5) {
                     echo '<br>Слишком быстро вводите пароль.';
                 };
             } else {
-                echo 'Вход не выполнен. Неверный логин/пароль.';
+                $_SESSION['counter'] = 1;
+                $_SESSION['login'] = $_POST['login'];
+                $_SESSION['time'] = time();
+                var_dump($_SESSION['time']);
+                var_dump($_SESSION['counter']);
+                var_dump($_SESSION['login']);
+                echo 'Session = 1. Обновленный логин. Вход не выполнен. Неверный логин/пароль.';
             };             
         };
     };
