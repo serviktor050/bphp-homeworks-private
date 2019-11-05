@@ -15,18 +15,11 @@
                 $_SESSION['counter'] = 1;
                 $_SESSION['login'] = $_POST['login'];
                 $_SESSION['time'] = time();
-                var_dump($_SESSION['time']);
-                var_dump($_SESSION['counter']);
-                var_dump($_SESSION['login']);
-                echo 'session = 1. Вход не выполнен. Неверный логин/пароль.';
+                echo 'Вход не выполнен. Неверный логин/пароль.';
             };
             if ($_SESSION['login'] === $_POST['login'] && $_SESSION['time']) {
                 if ((time() - $_SESSION['time']) < 60) {
                     $_SESSION['counter']++;
-                    var_dump($_SESSION['time']);
-                    var_dump($_SESSION['login']);                    
-                    var_dump($_SESSION['counter']);
-                     
                     if ($_SESSION['counter'] > 3) {
                         echo 'Вход не выполнен. Неверный логин/пароль.<br>Слишком часто вводите пароль. Попробуйте еще раз через минуту.';
                         session_destroy(); 
@@ -46,10 +39,7 @@
                 $_SESSION['counter'] = 1;
                 $_SESSION['login'] = $_POST['login'];
                 $_SESSION['time'] = time();
-                var_dump($_SESSION['time']);
-                var_dump($_SESSION['counter']);
-                var_dump($_SESSION['login']);
-                echo 'Session = 1. Обновленный логин. Вход не выполнен. Неверный логин/пароль.';
+                echo 'Вход не выполнен. Неверный логин/пароль.';
             };             
         };
     };
